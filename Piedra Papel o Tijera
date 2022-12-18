@@ -1,0 +1,45 @@
+import random
+
+t = ["Piedra", "Papel", "Tijera"]
+
+Computer = t[random.randint(0, 2)]
+Player = False
+scplayer = 0
+sccomputer = 0
+
+while scplayer + sccomputer < 3:
+    Player = input("¿Piedra, Papel o Tijera?\n")
+    if Player == Computer:
+        print("Empate!")
+    elif Player == "Piedra":
+        if Computer == "Papel":
+            sccomputer = sccomputer + 1
+            print("Perdiste! La computadora eligio Papel")
+        else:
+            print("Ganaste! La computadora eligio Tijera")
+            scplayer = scplayer + 1
+    elif Player == "Tijera":
+        if Computer == "Piedra":
+            sccomputer = sccomputer + 1
+            print("Perdiste! La computadora eligio Piedra")
+        else:
+            print("Ganaste! La computadora eligio Papel")
+            scplayer = scplayer + 1
+    elif Player == "Papel":
+        if Computer == "Tijera":
+            sccomputer = sccomputer + 1
+            print("Perdiste! La computadora eligio Tijera")
+        else:
+            print("Ganaste! La computadora eligio Piedra")
+            scplayer = scplayer + 1
+    else:
+        print("Por favor intentelo de nuevo")
+    scplayer1 = scplayer
+    str(scplayer1)
+    sccomputer1 = sccomputer
+    str(sccomputer1)
+    print("Tu puntuacion:", scplayer1, "\n Puntuacion de la computadora:", sccomputer1)
+    Computer = t[random.randint(0, 2)]
+    input("Presiona enter para continuar...")
+
+print("Gracias por jugar")
